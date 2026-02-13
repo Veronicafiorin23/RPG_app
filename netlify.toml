@@ -5,9 +5,6 @@
   command = ""
   publish = "."
 
-[build.environment]
-  NODE_ENV = "production"
-
 # Headers de segurança
 [[headers]]
   for = "/*"
@@ -17,107 +14,24 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "origin-when-cross-origin"
 
-# Cache para arquivos CSS
-[[headers]]
-  for = "*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-# Cache para arquivos JS
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-# Redirecionamento para index.html
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Cache-Control = "public, max-age=3600"  [headers.values]  for = "*.html"[[headers]]    Cache-Control = "public, max-age=31536000"  [headers.values]  for = "*.js"[[headers]]    Cache-Control = "public, max-age=31536000"  [headers.values]  for = "*.css"[[headers]]# Configurações de cache para recursos estáticos  status = 301  to = "/"  from = "/rpg"[[redirects]]# Redirecionamentos (se necessário)    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self';"    Referrer-Policy = "origin-when-cross-origin"    X-XSS-Protection = "1; mode=block"    X-Content-Type-Options = "nosniff"    X-Frame-Options = "DENY"  [headers.values]  for = "/*"[[headers]]# Configurações de cabeçalhos de segurança  NODE_ENV = "production"  # Definir NODE_ENV como production para otimização[build.environment]  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF"  # Ignorar mudanças em arquivos que não afetam o deploy    publish = "."  # Diretório de publicação - raiz do projeto    command = ""  # Comando de build - vazio pois é HTML puro  # Comando vazio - não precisa de build para HTML estático
-  command = ""
-  # Diretório raiz onde estão os arquivos HTML
-  publish = "."
-
-[build.environment]
-  # Não precisa de Node.js para HTML estático
-  NODE_VERSION = ""
-
-# Headers de segurança adicionais para o deploy
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "origin-when-cross-origin"
-    Feature-Policy = "camera 'none'; microphone 'none'; geolocation 'none'"
-
-# Configurações específicas para arquivos HTML
-[[headers]]
-  for = "*.html"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';"
-
-# Otimização para arquivos estáticos
+# Cache para arquivos estáticos
 [[headers]]
   for = "*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
 [[headers]]
-  for = "*.js"
+  for = "*.js" 
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
-# Redirecionamentos (se necessário)
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# SPA redirection para index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
-  conditions = { Role = ["*"] }
