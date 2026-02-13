@@ -1,0 +1,1035 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #16213e;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #533483;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-welcome {
+    color: #d1d5db;
+}
+
+/* Botões */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #533483;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6b46c1;
+}
+
+.btn-secondary {
+    background-color: #0f3460;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #1e40af;
+}
+
+/* Layout principal */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* Telas */
+.screen {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card de boas-vindas */
+.welcome-card {
+    background-color: #16213e;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.welcome-card h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #533483;
+    margin-bottom: 1rem;
+}
+
+.welcome-card p {
+    color: #d1d5db;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Cards de autenticação */
+.auth-card {
+    background-color: #16213e;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.auth-card h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #533483;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.auth-card p {
+    text-align: center;
+    color: #d1d5db;
+    margin-top: 1rem;
+}
+
+.auth-card a {
+    color: #533483;
+    text-decoration: none;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f3f4f6;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1a1a2e;
+    border: 1px solid #4b5563;
+    border-radius: 0.375rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #533483;
+    box-shadow: 0 0 0 3px rgba(83, 52, 131, 0.1);
+}
+
+/* Mensagens de erro */
+.error-message {
+    background-color: #dc2626;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Tela do jogo */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.game-header h2 {
+    color: #533483;
+    font-size: 1.875rem;
+}
+
+.game-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Card do personagem */
+.character-card {
+    background-color: #16213e;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.character-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.character-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.character-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: 2px solid #533483;
+    object-fit: cover;
+}
+
+.character-stats h4 {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.character-stats p {
+    color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+/* Tabuleiro */
+.board-container {
+    background-color: #16213e;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.board-container h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.game-board {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    max-width: 100%;
+    border: 2px solid #4b5563;
+    border-radius: 0.375rem;
+    margin: 0 auto;
+    cursor: crosshair;
+    background-color: #374151;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.board-background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.board-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.grid-cell {
+    position: absolute;
+    border: 1px solid #6b7280;
+    opacity: 0.2;
+}
+
+.character-piece {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.character-piece:hover {
+    transform: scale(1.1);
+}
+
+.character-piece img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+    border: 2px solid #533483;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    object-fit: cover;
+}
+
+.board-info {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+/* Modais */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal-content {
+    background-color: #16213e;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #533483;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-buttons .btn {
+    flex: 1;
+}
+
+/* Upload de imagem */
+.image-upload {
+    text-align: center;
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #533483;
+    color: white;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+}
+
+.upload-btn:hover {
+    background-color: #6b46c1;
+}
+
+.image-upload input[type="file"] {
+    display: none;
+}
+
+.image-preview {
+    margin: 0.5rem 0;
+}
+
+.image-preview img {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 0.375rem;
+    border: 2px solid #533483;
+    object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-container {
+        padding: 1rem;
+    }
+
+    .welcome-card {
+        padding: 2rem;
+    }
+
+    .welcome-card h1 {
+        font-size: 2rem;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .game-controls {
+        justify-content: center;
+    }
+
+    .game-board {
+        width: 100%;
+        height: 400px;
+    }
+
+    .character-display {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .welcome-card {
+        padding: 1.5rem;
+    }
+
+    .game-board {
+        height: 300px;
+    }
+}
+
+/* 🔒 ESTILOS SEGUROS PARA SISTEMA DE SERVIDORES */
+
+/* Botão highlight para servidores */
+.btn-highlight {
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    color: white;
+    border: 2px solid transparent;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+}
+
+.btn-highlight:hover {
+    background: linear-gradient(135deg, #e67e22, #c0392b);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(243, 156, 18, 0.4);
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+/* Container de servidores */
+.servers-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.servers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #0f3460;
+}
+
+.servers-header h2 {
+    color: #f39c12;
+    margin: 0;
+}
+
+.main-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-controls .btn {
+    white-space: nowrap;
+}
+
+.servers-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.servers-owned, .servers-joined, .servers-join {
+    background-color: #16213e;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #0f3460;
+}
+
+.servers-owned h3, .servers-joined h3, .servers-join h3 {
+    margin-bottom: 1rem;
+    color: #f39c12;
+}
+
+.servers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.server-card {
+    background-color: #1a1a2e;
+    border: 2px solid #2d3748;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.server-card:hover {
+    border-color: #f39c12;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.2);
+}
+
+.server-card h4 {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+}
+
+.server-card p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.server-code {
+    font-family: monospace;
+    background-color: #0f3460;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+.server-master-badge, .server-player-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.server-master-badge {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.server-player-badge {
+    background-color: #0f3460;
+    color: white;
+}
+
+.join-server-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.join-server-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #2d3748;
+    border-radius: 0.375rem;
+    background-color: #1a1a2e;
+    color: white;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.join-server-form input:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.no-servers {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    padding: 2rem;
+    border: 2px dashed #2d3748;
+    border-radius: 0.5rem;
+}
+
+/* Tela individual do servidor */
+.server-room {
+    display: flex;
+    height: calc(100vh - 120px);
+    gap: 1rem;
+}
+
+.server-sidebar {
+    width: 300px;
+    background-color: #16213e;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.server-info {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #0f3460;
+}
+
+.server-info h3 {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.badge.master {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.server-players {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.player-item:hover {
+    background-color: rgba(15, 52, 96, 0.3);
+}
+
+.player-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.server-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #2d3748;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    background-color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+
+.chat-message {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: rgba(15, 52, 96, 0.2);
+}
+
+.chat-message .username {
+    font-weight: bold;
+    color: #f39c12;
+    margin-right: 0.5rem;
+}
+
+.chat-message .timestamp {
+    font-size: 0.75rem;
+    color: #888;
+    float: right;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input-container input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #2d3748;
+    border-radius: 0.25rem;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.chat-input-container input:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.chat-input-container button {
+    padding: 0.5rem 1rem;
+    background-color: #f39c12;
+    color: #000;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-input-container button:hover {
+    background-color: #e67e22;
+}
+
+.server-controls {
+    padding-top: 1rem;
+    border-top: 1px solid #0f3460;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.server-game-area {
+    flex: 1;
+    background-color: #16213e;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.server-game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #0f3460;
+}
+
+.server-game-header h3 {
+    color: #f39c12;
+    margin: 0;
+}
+
+.server-game-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.server-board-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsividade para servidores */
+@media (max-width: 768px) {
+    .server-room {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .server-sidebar {
+        width: 100%;
+    }
+
+    .servers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .join-server-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* 🎮 ESTILOS PARA TABULEIRO COM COORDENADAS E PERSONAGENS */
+
+/* Coordenadas do tabuleiro */
+.server-grid-overlay .grid-cell {
+    transition: background-color 0.2s;
+    cursor: crosshair;
+}
+
+.server-grid-overlay .grid-cell:hover {
+    background-color: rgba(243, 156, 18, 0.1) !important;
+}
+
+/* Personagens no tabuleiro */
+.server-character {
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.server-character:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
+.server-character:active {
+    cursor: grabbing !important;
+    transform: scale(0.95);
+}
+
+/* Efeitos de arraste */
+.server-character.dragging {
+    opacity: 0.7;
+    transform: rotate(5deg) scale(1.05);
+    z-index: 1000 !important;
+}
+
+/* Layer de personagens */
+.characters-layer {
+    z-index: 5;
+}
+
+/* Células ocupadas */
+.grid-cell.occupied {
+    background-color: rgba(243, 156, 18, 0.2) !important;
+}
+
+/* Pulsação para célula selecionada */
+@keyframes cell-pulse {
+    0% { background-color: rgba(243, 156, 18, 0.3); }
+    50% { background-color: rgba(243, 156, 18, 0.1); }
+    100% { background-color: rgba(243, 156, 18, 0.3); }
+}
+
+.grid-cell.target {
+    animation: cell-pulse 1s infinite;
+}
+
+/* Melhorias no tabuleiro do servidor */
+.server-board-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow: auto;
+}
+
+#server-board {
+    margin: 0 auto;
+    background-color: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Coordenadas melhoradas */
+.server-grid-overlay + div {
+    font-family: 'Courier New', monospace;
+    user-select: none;
+}
+
+/* Tooltips para personagens */
+.server-character::before {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.server-character:hover::before {
+    opacity: 1;
+}
+
+/* Indicador para mestres */
+.server-character[data-is-master="true"] {
+    border: 3px solid #f39c12 !important;
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.6);
+}
+
+/* Animação suave para movimento */
+.server-character.moving {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Destaque para célula alvo */
+.grid-cell.drop-target {
+    background-color: rgba(46, 204, 113, 0.4) !important;
+    border: 2px dashed #2ecc71 !important;
+}
+
+/* Controles do tabuleiro melhorados */
+.server-game-controls button {
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.server-game-controls button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Instruções para o usuário */
+.board-instructions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    max-width: 200px;
+    z-index: 100;
+}
+
+.board-instructions.hidden {
+    display: none;
+}
+
+/* Melhorias responsivas para o tabuleiro */
+@media (max-width: 1024px) {
+    #server-board {
+        transform: scale(0.8);
+        transform-origin: top left;
+    }
+    
+    .server-board-container {
+        overflow: auto;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #server-board {
+        transform: scale(0.6);
+    }
+    
+    .server-board-container {
+        height: 400px;
+    }
+    
+    .server-character {
+        font-size: 8px;
+    }
+}
+
+/* Efeitos visuais extras */
+.server-character.just-moved {
+    animation: character-moved 0.5s ease-out;
+}
+
+@keyframes character-moved {
+    0% {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
